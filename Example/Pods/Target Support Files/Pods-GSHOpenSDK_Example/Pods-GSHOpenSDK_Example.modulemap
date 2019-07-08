@@ -1,0 +1,6 @@
+framework module Pods_GSHOpenSDK_Example {
+  umbrella header "Pods-GSHOpenSDK_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module GSHOpenSDK {
+  umbrella header "GSHOpenSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
