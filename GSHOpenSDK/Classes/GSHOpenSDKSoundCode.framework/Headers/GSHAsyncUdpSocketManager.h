@@ -29,6 +29,5 @@ typedef NS_ENUM(NSInteger, GSHAsyncUdpSocketTaskState) {
 @interface GSHAsyncUdpSocketManager : NSObject
 
 -(instancetype)initBroadcastSocket;
--(GSHAsyncUdpSocketTask*)sendRequestData:(NSData*)requestData port:(uint16_t)post sendHandler:(void (^)(NSError *error))sendHandler receiveHandler:(BOOL(^)(NSData *responseData,NSData *address,NSError *error))receiveHandler;
-
+-(GSHAsyncUdpSocketTask*)sendGWSearchMsgWithsendHandler:(void (^)(NSError *error))sendHandler receiveHandler:(BOOL(^)(NSDictionary *gwDic,NSError *error))receiveHandler;
 @end

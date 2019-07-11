@@ -17,11 +17,6 @@ extern NSString * const GSHChangeNetworkManagerWebSocketRealDataUpdateNotificati
 
 @class GSHBaseMsg;
 @interface GSHWebSocketTask : NSObject
-@property (readonly, assign) long taskIdentifier;
-@property(nonatomic, assign) BOOL isEnd;   //这个字段如果是web内网任务则回调后就为yes。如果是外网任务在发出http请求的时候就yes啦，如果要了解任务进度请查看httpTask的状态；
-@property(nonatomic, strong) id requestData;
-@property(nonatomic, copy) void(^receiveHandler)(GSHBaseMsg *responseData,NSError *error);//内网的时候没有http请求，这个保存回调
-@property(nonatomic, strong) NSURLSessionDataTask *httpTask;//在外网需要发起http请求
 - (void)cancel;
 @end
 
