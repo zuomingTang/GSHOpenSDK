@@ -76,10 +76,10 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,strong) NSMutableArray <GSHDeviceExtM *> *exts;                 //控制参数
 @property(nonatomic,strong) NSMutableArray <GSHDeviceAttributeM *> *attribute;      //设备可控制
 
+- (NSDictionary*)realTimeDic;   //实时数据字典
 - (GSHDeviceCategoryM *)category;
 - (BOOL)isSelected;
 - (void)setIsSelected:(BOOL)isSelected;
-- (NSDictionary*)realTimeDic;   //实时数据字典
 //组合传感器专用方法，组合传感器的BaseMeteId是不确定的可以通过deviceSn获取到
 - (NSString *)getBaseMeteIdFromDeviceSn:(NSString *)deviceSn;
 @end
