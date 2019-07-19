@@ -11,28 +11,6 @@
 
 extern NSString * const GSHDeviceAddFinishNotification;
 
-@interface GSHMeteBindedInfoListM : GSHBaseModel
-@property (nonatomic , copy) NSString *basMeteId;
-@property (nonatomic , copy) NSString *meteName;
-@property (nonatomic , copy) NSString *deviceName;
-@property (nonatomic , copy) NSString *deviceSn;
-@property (nonatomic , copy) NSString *deviceId;
-@property (nonatomic , copy) NSString *meteId;
-@end
-
-@interface GSHSwitchMeteBindInfoModelM : GSHBaseModel
-@property (nonatomic , copy) NSString *basMeteId;
-@property (nonatomic , copy) NSString *meteName;
-@property (nonatomic , strong) NSMutableArray <GSHMeteBindedInfoListM *> *meteBindedInfoList;
-@end
-
-@interface GSHSwitchBindM : NSObject
-@property (nonatomic , copy) NSString *deviceId;
-@property (nonatomic , copy) NSString *deviceName;
-@property (nonatomic , copy) NSString *deviceSn;
-@property (nonatomic , strong) NSMutableArray <GSHSwitchMeteBindInfoModelM *> *switchMeteBindInfoModels;
-@end
-
 @interface GSHDeviceAttributeM : GSHBaseModel
 @property (nonatomic , copy) NSString *basMeteId;
 @property (nonatomic , copy) NSString *meteName;
@@ -153,12 +131,5 @@ extern NSString * const GSHDeviceAddFinishNotification;
 #pragma mark--场景面板接口
 // 场景面板 -- 解绑
 + (NSURLSessionDataTask *)unbindScenarioBoardWithFamilyId:(NSString *)familyId basMeteId:(NSString *)basMeteId deviceId:(NSString *)deviceId block:(void(^)(NSError *error))block;
-
-#pragma mark--双控开关相关接口
-// APP查询设备绑定详情
-+ (NSURLSessionDataTask *)getDeviceBIndInfoWithDeviceId:(NSString *)deviceId block:(void(^)(GSHSwitchBindM *switchBindM,NSError *error))block;
-
-// 解绑多控开关关联关系
-+ (NSURLSessionDataTask *)unBindMultiControlWithDeviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn basMeteId:(NSString *)basMeteId relDeviceId:(NSString *)relDeviceId relDeviceSn:(NSString *)relDeviceSn relBasMeteId:(NSString *)relBasMeteId block:(void(^)(NSError *error))block;
 @end
 
