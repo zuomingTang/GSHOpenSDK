@@ -13,14 +13,10 @@ extern NSString * const GSHChangeNetworkManagerWebSocketOpenNotification;       
 extern NSString * const GSHChangeNetworkManagerWebSocketCloseNotification;              //ws链接失败
 extern NSString * const GSHChangeNetworkManagerWebSocketRealDataUpdateNotification;     //ws实时数据更新
 
-
-
 @class GSHBaseMsg;
 @interface GSHWebSocketTask : NSObject
 - (void)cancel;
 @end
-
-
 
 typedef enum : NSUInteger {
     GSHNetworkTypeWAN,
@@ -41,10 +37,13 @@ typedef enum : NSUInteger {
 
 //发送获取实时数据请求
 -(BOOL)sendGetRealTimeMsg;
+//实时数据字典
+-(NSDictionary*)realTimeDic;
+
 //控制设备
 -(GSHWebSocketTask*)deviceControlWithGatewayId:(NSString *)gatewayId deviceSN:(NSString *)deviceSN basMeteId:(NSString *)basMeteId value:(NSString *)value block:(void(^)(NSError *error))block;
 //发送执行场景消息
 -(GSHWebSocketTask*)executeSceneWithGatewayId:(NSString *)gatewayId scenarioId:(NSString *)scenarioId block:(void(^)(NSError *error))block;
 //启动关闭联动
--(GSHWebSocketTask*)updateAutoStatushWithGatewayId:(NSString *)gatewayId RuleId:(NSString *)ruleId status:(NSString *)status block:(void(^)(NSError *error))block;
+-(GSHWebSocketTask*)updateAutoStatushWithGatewayId:(NSString *)gatewayId ruleId:(NSString *)ruleId status:(NSString *)status block:(void(^)(NSError *error))block;
 @end
