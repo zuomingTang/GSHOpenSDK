@@ -59,7 +59,7 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property (nonatomic ,copy) NSString *deviceTypeStr;
 @property (nonatomic ,copy) NSString *deviceModelStr;
 @property (nonatomic ,copy) NSString *picPath;
-#warning 资源图片需要打包到SDK
+#warning TODO  这些图片的资源还没到库里
 -(UIImage*)categoryInstallGuideImage;
 -(UIImage*)categoryOffIcon;
 -(UIImage*)categoryOnIcon;

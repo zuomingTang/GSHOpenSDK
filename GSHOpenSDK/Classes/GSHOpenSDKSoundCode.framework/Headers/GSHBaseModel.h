@@ -10,4 +10,5 @@
 #import "YYModel.h"
 
 @interface GSHBaseModel : NSObject
+
 @end
