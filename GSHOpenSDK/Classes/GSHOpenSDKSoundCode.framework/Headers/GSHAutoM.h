@@ -92,9 +92,9 @@
                                         block:(void(^)(NSString *ruleId ,NSError *error))block;
 
 // 删除联动
-+ (NSURLSessionDataTask *)deleteAutoWithAutoId:(NSString *)autoId
-                                      familyId:(NSString *)familyId
-                                         block:(void(^)(NSError *error))block;
++ (NSURLSessionDataTask *)deleteAutoWithOssAutoM:(GSHOssAutoM *)ossAutoM
+                                        familyId:(NSString *)familyId
+                                           block:(void(^)(NSError *error))block;
 
 // 修改联动
 + (NSURLSessionDataTask *)updateAutoWithVolumeId:(NSString *)volumeId
@@ -136,6 +136,10 @@
 + (NSURLSessionDataTask *)getAutoActionDevicesListWithFamilyId:(NSString *)familyId
                                                        roomId:(NSString *)roomId
                                                         block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
+
+// 从oss服务端获取联动数据
++ (void)getAutoFileFromOssWithFid:(NSString *)fid
+                            block:(void(^)(NSString *json,NSError *error))block;
 
 @end
 

@@ -78,9 +78,9 @@
                                        block:(void(^)(NSString *scenarionId , NSError *error))block;
 
 // 删除场景
-+ (NSURLSessionDataTask *)deleteSceneWithSceneId:(NSString *)sceneId
-                                        familyId:(NSString *)familyId
-                                           block:(void(^)(NSError *error))block;
++ (NSURLSessionDataTask *)deleteSceneWithOssSceneM:(GSHOssSceneM *)ossSceneM
+                                          familyId:(NSString *)familyId
+                                             block:(void(^)(NSError *error))block;
 
 // 修改场景
 + (NSURLSessionDataTask *)alertSceneWithVolumeId:(NSString *)volumeId
@@ -129,6 +129,10 @@
 + (NSURLSessionDataTask *)getSceneDevicesListWithFamilyId:(NSString *)familyId
                                                    roomId:(NSString *)roomId
                                                     block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
+
+// 从oss服务端获取场景数据
++ (void)getSceneFileFromOssWithFid:(NSString *)fid
+                             block:(void(^)(NSString *json,NSError *error))block;
 
 @end
 
