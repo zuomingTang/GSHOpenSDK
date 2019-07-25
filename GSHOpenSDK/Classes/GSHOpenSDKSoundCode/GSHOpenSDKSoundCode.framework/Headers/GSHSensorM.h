@@ -53,7 +53,6 @@ typedef enum : NSUInteger {
 
 @interface GSHSensorM : GSHDeviceM
 @property(nonatomic,strong)NSArray<GSHSensorMonitorM*> *attributeList;  //每个传感器都有一个监控值列表（取最新数据）
-#warning 资源图片需要打包到SDK
 //组合传感器类别图片
 - (UIImage*)sensorGroupCategoryIcon;
 //最新数据字符串
