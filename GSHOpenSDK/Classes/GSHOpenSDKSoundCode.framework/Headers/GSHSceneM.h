@@ -84,6 +84,7 @@
 
 // 修改场景
 + (NSURLSessionDataTask *)alertSceneWithVolumeId:(NSString *)volumeId
+                                       oldRoomId:(NSString *)oldRoomId
                                           sceneM:(GSHSceneM *)sceneM
                                        ossSceneM:(GSHOssSceneM *)ossSceneM
                                            block:(void(^)(NSError *error))block;

@@ -15,7 +15,8 @@ extern NSString * const GSHOpenSDKFamilyChangeNotification;                     
 extern NSString * const GSHOpenSDKFamilyListUpdataNotification;                             //家庭列表更新
 extern NSString * const GSHOpenSDKFamilyUpdataNotification;                                 //当前家庭改变
 extern NSString * const GSHOpenSDKFamilyGatewayChangeNotification;                          //网关替换中
-extern NSString * const GSHOpenSDKDeviceUpdataNotification;                                 //设备更新
+extern NSString * const GSHOpenSDKDeviceUpdataNotification;                                 //设备更新（会带上一个数组，改动相关房间的roomId）
+extern NSString * const GSHOpenSDKSceneUpdataNotification;                                  //场景更新（会带上一个数组，改动相关房间的roomId）
 
 @class GSHFamilyM;
 
@@ -35,6 +36,4 @@ extern NSString * const GSHOpenSDKDeviceUpdataNotification;                     
 -(void)updateHttpDomain:(NSString*)httpDomain port:(NSNumber*)port;
 //更新OSS服务域名(不设置默认线上服务)
 -(void)updateOssDomain:(NSString*)ossDomain;
-//更新webSocket要链接的网关(必须设置网关id，才能或去实时数据，在局域网模式下只有设置网关后才能进行操作)
--(void)updateGWId:(NSString*)gwId;
 @end

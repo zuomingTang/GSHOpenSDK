@@ -121,10 +121,10 @@ extern NSString * const GSHDeviceAddFinishNotification;
 + (NSURLSessionDataTask *)postAddDeviceWithFamilyId:(NSString *)familyId deviceId:(NSString *)deviceId deviceType:(NSString *)deviceType roomId:(NSString*)roomId deviceName:(NSString *)deviceName attribute:(NSArray *)attribute block:(void(^)(GSHDeviceM *device, NSError *error))block;
 
 // 修改设备
-+ (NSURLSessionDataTask *)postUpdateDeviceWithFamilyId:(NSString *)familyId deviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn deviceType:(NSString *)deviceType roomId:(NSString*)roomId deviceName:(NSString *)deviceName attribute:(NSArray *)attribute block:(void(^)(GSHDeviceM *device,NSError *error))block;
++ (NSURLSessionDataTask *)postUpdateDeviceWithFamilyId:(NSString *)familyId deviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn deviceType:(NSString *)deviceType roomId:(NSString*)roomId newRoomId:(NSString*)newRoomId deviceName:(NSString *)deviceName attribute:(NSArray *)attribute block:(void(^)(GSHDeviceM *device,NSError *error))block;
 
 // 删除设备
-+ (NSURLSessionDataTask *)deleteDeviceWithFamilyId:(NSString *)familyId deviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn deviceModel:(NSString *)deviceModel deviceType:(NSString*)deviceType block:(void(^)(NSError *error))block;
++ (NSURLSessionDataTask *)deleteDeviceWithFamilyId:(NSString *)familyId roomId:(NSString*)roomId deviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn deviceModel:(NSString *)deviceModel deviceType:(NSString *)deviceType block:(void(^)(NSError *error))block;
 
 // 获取所有设备
 +(NSURLSessionDataTask*)getDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
