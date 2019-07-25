@@ -10,6 +10,14 @@ Pod::Spec.new do |s|
   s.name             = 'GSHOpenSDK'
   s.version          = '0.2.16'
   s.summary          = 'GSHOpenSDK'
+  
+  s.subspec 'GSHOpenSDKSoundCode' do |ssc|
+      ssc.vendored_frameworks = 'GSHOpenSDK/Classes/GSHOpenSDKSoundCode/GSHOpenSDKSoundCode.framework'
+      ssc.resource_bundles = {
+          'GSHOpenSDKSoundCode' => ['GSHOpenSDK/Assets/GSHOpenSDKSoundCode/*']
+      }
+      ssc.requires_arc = false
+  end
 
 
   s.description      = <<-DESC
@@ -22,12 +30,8 @@ TODO: GSHOpenSDK
   s.author           = { 'zuomingTang' => '414933949@qq.com' }
   s.source           = { :git => 'https://github.com/zuomingTang/GSHOpenSDK.git', :tag => '0.2.16' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '9.0'
-  s.vendored_frameworks = 'GSHOpenSDK/Classes/GSHOpenSDKSoundCode.framework'
-  s.resource_bundles = {
-      'GSHOpenSDK' => ['GSHOpenSDK/Assets/*']
-  }
-  s.requires_arc = false
   
+  s.source_files = 'GSHOpenSDK/Classes/*'
+  s.ios.deployment_target = '9.0'
+  s.requires_arc = false
 end
