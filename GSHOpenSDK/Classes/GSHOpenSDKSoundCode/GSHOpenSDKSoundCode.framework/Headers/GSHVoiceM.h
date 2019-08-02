@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GSHVoiceManager : NSObject
 
+// 初始化讯飞SDK
++(void)initIFlyAppId:(NSString*)appId;
+
 // POST 语音控制
 + (NSURLSessionDataTask *)voiceControlWithFamilyId:(NSString *)familyId
                                               text:(NSString *)text

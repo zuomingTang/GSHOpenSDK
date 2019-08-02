@@ -114,7 +114,15 @@
                                                block:(void(^)(NSError *error))block;
 
 // 场景面板绑定 -- 添加联动 并 保存绑定信息
+//+ (NSURLSessionDataTask *)bindSceneWithOssAutoM:(GSHOssAutoM *)ossAutoM
+//                                       deviceId:(NSString *)deviceId
+//                                      basMeteId:(NSString *)basMeteId
+//                                     scenarioId:(NSString *)scenarioId
+//                                          block:(void(^)(NSString *ruleId ,NSError *error))block;
+
+// 场景面板绑定 -- 添加联动 并 保存绑定信息
 + (NSURLSessionDataTask *)bindSceneWithOssAutoM:(GSHOssAutoM *)ossAutoM
+                                          autoM:(GSHAutoM *)autoM
                                        deviceId:(NSString *)deviceId
                                       basMeteId:(NSString *)basMeteId
                                      scenarioId:(NSString *)scenarioId

@@ -79,8 +79,8 @@ typedef enum : NSInteger {
 //转移管理权限
 +(NSURLSessionDataTask*)postTransferFamilyWithFamilyId:(NSString*)familyId childUserId:(NSString*)childUserId block:(void(^)(NSError *error))block;
 
-//获取家庭下所有信息：楼层，房间，设备（切换离线模式的时候需要拉去信息）
-+(NSURLSessionDataTask *)getAllInfoFromFamilyWithFamilyId:(NSString *)familyId block:(void(^)(GSHFamilyM *familyM , NSArray *automationList, NSArray *scenarios,NSArray *sensorList, NSError *error))block;
+//获取家庭下所有信息：楼层，房间，设备（切换离线模式的时候需要拉取信息）
++(NSURLSessionDataTask *)getAllInfoFromFamilyWithFamilyId:(NSString *)familyId block:(void(^)(NSError *error))block;
 
 //获取所有设备(有房间信息)（获取该家庭有权限的所有设备，无权限设备不会返回）
 +(NSURLSessionDataTask*)getAllDevicesWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHFloorM*> *list,NSError *error))block;

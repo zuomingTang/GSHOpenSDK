@@ -30,8 +30,6 @@ extern NSString * const GSHOpenSDKSceneUpdataNotification;                      
 @property(nonatomic,strong)GSHFamilyM *currentFamily;
 
 +(instancetype)share;
-//更新当前用户鉴权
--(void)updateUserId:(NSString*)userId sessionId:(NSString*)sessionId;
 //更新HttpApi服务域名与端口（不设置默认线上服务）
 -(void)updateHttpDomain:(NSString*)httpDomain port:(NSNumber*)port;
 //更新OSS服务域名(不设置默认线上服务)
