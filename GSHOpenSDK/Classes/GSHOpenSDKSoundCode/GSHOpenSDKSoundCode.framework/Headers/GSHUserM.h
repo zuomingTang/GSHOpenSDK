@@ -7,7 +7,7 @@
 //
 
 #import <GSHOpenSDKSoundCode/GSHBaseModel.h>
-#import "GSHOpenSDKInternal.h"
+#import <UIKit/UIKit.h>
 
 extern NSString * const GSHUserMChangeNotification;          //登出成功
 extern NSString * const GSHUserInfoMChangeNotification;             //个人信息发生改变
