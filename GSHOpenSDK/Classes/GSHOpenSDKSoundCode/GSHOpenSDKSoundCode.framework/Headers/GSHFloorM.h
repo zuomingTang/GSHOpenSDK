@@ -46,5 +46,5 @@ typedef enum : NSUInteger {
 +(NSURLSessionDataTask*)postDeleteFloorWithFamilyId:(NSString*)familyId floorId:(NSNumber*)floorId block:(void(^)(NSError *error))block;
 
 //更新楼层房间排序信息
-+(NSURLSessionDataTask*)postUpdataRoomRankWithFloor:(GSHFloorM*)floor familyId:(NSString*)familyId block:(void(^)(NSError *error))block;
++(NSURLSessionDataTask*)postUpdataRoomRankWithRoomList:(NSArray<GSHRoomM*>*)roomList familyId:(NSString*)familyId block:(void(^)(NSError *error))block;
 @end
