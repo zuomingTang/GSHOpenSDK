@@ -59,11 +59,6 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property (nonatomic ,copy) NSString *deviceTypeStr;
 @property (nonatomic ,copy) NSString *deviceModelStr;
 @property (nonatomic ,copy) NSString *picPath;
--(UIImage*)categoryInstallGuideImage;
--(UIImage*)categoryOffIcon;
--(UIImage*)categoryOnIcon;
--(UIImage*)categoryUnlinkIcon;
--(UIImage*)sensorGroupCategoryIcon;
 @end
 
 @interface GSHDeviceM : GSHBaseModel

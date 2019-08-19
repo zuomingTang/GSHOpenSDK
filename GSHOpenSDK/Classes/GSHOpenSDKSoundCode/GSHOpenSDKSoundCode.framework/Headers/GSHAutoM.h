@@ -35,7 +35,6 @@
 @property (nonatomic , strong) GSHDeviceM *device;
 
 - (NSString *)getActionName;
-- (UIImage *)actionCellImage;
 
 @end
 

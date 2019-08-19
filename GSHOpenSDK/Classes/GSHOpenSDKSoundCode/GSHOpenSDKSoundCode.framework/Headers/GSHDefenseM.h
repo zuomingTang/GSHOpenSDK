@@ -12,16 +12,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GSHDefenseDeviceTypeM : NSObject
-
 @property (copy , nonatomic) NSString *defenceState;
 @property (copy , nonatomic) NSString *deviceType;
 @property (copy , nonatomic) NSString *enableFlag;
 @property (copy , nonatomic) NSString *picPath;
 @property (copy , nonatomic) NSString *sessionId;
 @property (copy , nonatomic) NSString *typeName;
-
-- (UIImage*)categoryOffIcon;
-
 @end
 
 @interface GSHDefenseDeviceTypeManager : NSObject

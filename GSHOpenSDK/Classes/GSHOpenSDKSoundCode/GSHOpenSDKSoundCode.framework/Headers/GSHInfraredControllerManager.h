@@ -29,7 +29,6 @@
 @property(nonatomic,strong)NSNumber *devicetypeId;                  //品类ID
 @property(nonatomic,copy)NSString *name;                            //名字
 @property(nonatomic,copy)NSString *displayName;                     //显示的名字
--(UIImage*)iconImage;                                               //得到品类的图片
 @end
 //遥控器对象
 @interface GSHKuKongRemoteM : GSHBaseModel
@@ -62,9 +61,6 @@
 @property(nonatomic,strong)NSNumber *parentDeviceId;        //红外转发器设备id
 @property(nonatomic,strong)NSNumber *remoteId;              //遥控器ID
 @property(nonatomic,strong)NSNumber *bindRemoteId;          //绑定的遥控器ID(机顶盒需要绑定电视的遥控)
--(UIImage*)categoryOffIcon;
--(UIImage*)categoryOnIcon;
--(UIImage*)categoryUnlinkIcon;
 @end
 
 @interface GSHInfraredControllerManager : NSObject
