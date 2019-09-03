@@ -152,4 +152,10 @@ typedef enum : NSUInteger {
 // 设置猫眼门铃免打扰
 +(NSURLSessionDataTask *)postCallingPushConfigWithDeviceSerial:(NSString *)deviceSerial on:(BOOL)on familyId:(NSString*)familyId block:(void(^)(NSError *error))block;
 
+// 检查摄像头是否支持AP配网
++(NSURLSessionDataTask *)getCheckAPAvailableWithModelName:(NSString *)modelName block:(void(^)(id responseObject, NSError *error))block;
+
+// 设置全天录像开关
++(NSURLSessionDataTask *)postSetFulldaySwitchStatusWithDeviceSerial:(NSString *)deviceSerial on:(BOOL)on block:(void(^)(NSError *error))block;
+
 @end
