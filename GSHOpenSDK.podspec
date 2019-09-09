@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
       ssc.dependency 'FMDBHelpers', '0.0.7'
       ssc.dependency 'EZOpenSDK', '4.8.6'
       ssc.dependency 'Protobuf', '3.6.0'
-      ssc.dependency 'TZMExternalPackagLib', :git => 'https://github.com/zuomingTang/TZMExternalPackagLib.git', :tag => '0.1.4.1'
       ssc.requires_arc = false
   end
 
