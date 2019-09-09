@@ -16,13 +16,11 @@ Pod::Spec.new do |s|
       ssc.resource_bundles = {
           'GSHOpenSDKSoundCode' => ['GSHOpenSDK/Assets/GSHOpenSDKSoundCode/*']
       }
-      ssc.dependency 'YYModel', '1.0.4'
       ssc.dependency 'CocoaAsyncSocket', '7.5.0'
       ssc.dependency 'SocketRocket', '0.5.1'
       ssc.dependency 'FMDB', '2.6.2'
       ssc.dependency 'FMDBHelpers', '0.0.7'
       ssc.dependency 'EZOpenSDK', '4.8.6'
-      ssc.dependency 'OpenSSL-Universal', '1.0.2.13'
       ssc.dependency 'Protobuf', '3.6.0'
       ssc.requires_arc = false
   end
