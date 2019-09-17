@@ -84,4 +84,16 @@ typedef enum : NSInteger {
 
 //获取所有设备(有房间信息)（获取该家庭有权限的所有设备，无权限设备不会返回）
 +(NSURLSessionDataTask*)getAllDevicesWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHFloorM*> *list,NSError *error))block;
+
+//绑定别名
++(NSURLSessionDataTask*)postBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName block:(void(^)(NSError *error))block;
+
+//解绑别名
++(NSURLSessionDataTask*)postUnBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName block:(void(^)(NSError *error))block;
+
+//通过别名获取family
++(NSURLSessionDataTask*)postFamilyWithAliasName:(NSString*)aliasName block:(void(^)(NSError *error,NSString *familyId,NSString *familyName))block;
+
+//第三方获取familylist
++(NSURLSessionDataTask*)postThirdpPartyFamilyListWithBlock:(void(^)(NSError *error,NSArray<GSHFamilyM*> *list))block;
 @end
