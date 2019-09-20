@@ -92,7 +92,7 @@ typedef enum : NSInteger {
 +(NSURLSessionDataTask*)postUnBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName block:(void(^)(NSError *error))block;
 
 //通过别名获取family
-+(NSURLSessionDataTask*)postFamilyWithAliasName:(NSString*)aliasName block:(void(^)(NSError *error,NSString *familyId,NSString *familyName))block;
++(NSURLSessionDataTask*)postFamilyWithAliasName:(NSString*)aliasName block:(void(^)(NSError *error,GSHFamilyM *family))block;
 
 //第三方获取familylist
 +(NSURLSessionDataTask*)postThirdpPartyFamilyListWithBlock:(void(^)(NSError *error,NSArray<GSHFamilyM*> *list))block;
