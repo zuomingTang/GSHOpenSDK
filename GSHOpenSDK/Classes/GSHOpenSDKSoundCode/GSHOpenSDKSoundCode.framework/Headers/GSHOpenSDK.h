@@ -23,6 +23,9 @@ extern NSString * const GSHOpenSDKSceneUpdataNotification;                      
 @property(nonatomic,strong)GSHFamilyM *currentFamily;
 
 +(instancetype)share;
+
+-(void)authWithAppId:(NSString*)appid phone:(NSString*)phone userId:(NSString*)userId black:(void(^)(NSError *error))block;
+
 //设置http请求返回总回调block
 -(void)setResponseBlock:(void(^)(NSError *error))responseBlock;
 //更新HttpApi服务域名与端口（不设置默认线上服务）
