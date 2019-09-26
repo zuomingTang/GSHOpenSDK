@@ -70,7 +70,7 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property (nonatomic , strong) NSString *introPic;
 @property (nonatomic , strong) NSNumber *deviceType;
 @property (nonatomic , copy) NSString *deviceTypeStr;
-@property (nonatomic , strong) NSString *picPath;
+@property (nonatomic , strong) NSString *homePageIcon;
 @property (nonatomic , strong) NSNumber *deviceKind;
 @property (nonatomic , copy) NSString *kindName;
 
@@ -121,6 +121,8 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,strong) NSNumber *permissionState;  // 权限状态
 @property(nonatomic,strong) NSNumber *rank;             // 排名
 @property(nonatomic,strong) NSString *launchtime;       // 设备入网时间
+
+@property(nonatomic,strong) NSString *homePageIcon;     // 首页设备图标
 
 @property(nonatomic,strong) NSMutableArray <GSHDeviceExtM *> *exts;                 //控制参数
 @property(nonatomic,strong) NSMutableArray <GSHDeviceAttributeM *> *attribute;      //设备可控制
