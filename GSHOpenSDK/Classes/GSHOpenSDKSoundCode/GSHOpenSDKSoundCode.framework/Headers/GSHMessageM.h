@@ -10,6 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    GSHMsgTypeKeySystemWarn = 0,                        // 系统消息提醒
+    GSHMsgTypeKeyBatteryWarn,                           // 低电量消息提醒
+    GSHMsgTypeKeyScenarioWarn,                          // 场景消息提醒
+    GSHMsgTypeKeyAutomationWarn,                        // 联动消息提醒
+    GSHMsgTypeKeyAlarmWarn,                             // 告警消息提醒
+} GSHMsgTypeKey;
+
 @interface GSHMessageM : NSObject
 
 @property (nonatomic , copy) NSString *createTime;
@@ -53,9 +61,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSURLSessionDataTask *)getMsgConfigWithFamilyId:(NSString *)familyId
                                              block:(void(^)(GSHMessageM *messageM,NSError *error))block;
 
-// App用户修改消息提醒设置
+
+/*
+ App用户修改消息提醒设置
+ */
+
 + (NSURLSessionDataTask *)updateMsgConfigWithFamilyId:(NSString *)familyId
-                                              msgType:(NSInteger)msgType
+                                        msgTypeKeyStr:(GSHMsgTypeKey)msgTypeKeyStr
                                                 value:(NSString *)value
                                                 block:(void(^)(NSError *error))block;
 

@@ -61,6 +61,36 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property (nonatomic ,copy) NSString *picPath;
 @end
 
+@interface GSHDeviceModelM : GSHBaseModel
+
+@property (nonatomic , strong) NSNumber *deviceModel;
+@property (nonatomic , strong) NSString *deviceModelStr;
+@property (nonatomic , strong) NSString *modelNameDesc;
+@property (nonatomic , strong) NSString *hardModel;
+@property (nonatomic , strong) NSString *introPic;
+@property (nonatomic , strong) NSNumber *deviceType;
+@property (nonatomic , copy) NSString *deviceTypeStr;
+@property (nonatomic , strong) NSString *homePageIcon;
+@property (nonatomic , strong) NSNumber *deviceKind;
+@property (nonatomic , copy) NSString *kindName;
+
+@end
+
+@interface GSHDeviceTypeM : GSHBaseModel
+
+@property (nonatomic , strong) NSNumber *deviceKind;
+@property (nonatomic , strong) NSNumber *deviceType;
+@property (nonatomic , copy) NSString *deviceTypeStr;
+@property (nonatomic,strong) NSMutableArray <GSHDeviceModelM *> *deviceModelList;
+@end
+
+@interface GSHDeviceKindM : GSHBaseModel
+
+@property (nonatomic , strong) NSNumber *deviceKind;
+@property (nonatomic , copy) NSString *kindName;
+@property (nonatomic,strong) NSMutableArray <GSHDeviceTypeM *> *deviceTypeList;
+@end
+
 @interface GSHDeviceM : GSHBaseModel
 @property(nonatomic,strong) NSNumber *deviceId;         // 设备id
 @property(nonatomic,copy) NSString *deviceSn;           // 设备SN
@@ -76,6 +106,8 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,copy) NSString *deviceModelStr;     // 设备型号str
 @property(nonatomic,strong) NSNumber *deviceType;       // 设备类型
 @property(nonatomic,copy) NSString *deviceTypeStr;      // 设备类型str
+@property(nonatomic,copy) NSString *hardModel;          // 硬件型号
+@property(nonatomic,copy) NSString *modelNameDesc;      // 设备型号描述
 
 @property(nonatomic,strong) NSNumber *gatewayId;        // 网关id (部分接口回有这个字段，其他接口没有这个字段)
 @property(nonatomic,strong) NSNumber *familyId;         // 家庭id (只有离线模式获取所有设备的时候回有这个字段，其他接口没有这个字段)
@@ -89,6 +121,8 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,strong) NSNumber *permissionState;  // 权限状态
 @property(nonatomic,strong) NSNumber *rank;             // 排名
 @property(nonatomic,strong) NSString *launchtime;       // 设备入网时间
+
+@property(nonatomic,strong) NSString *homePageIcon;     // 首页设备图标
 
 @property(nonatomic,strong) NSMutableArray <GSHDeviceExtM *> *exts;                 //控制参数
 @property(nonatomic,strong) NSMutableArray <GSHDeviceAttributeM *> *attribute;      //设备可控制
@@ -106,6 +140,9 @@ extern NSString * const GSHDeviceAddFinishNotification;
 // 获取设备品类
 + (NSURLSessionDataTask *)getDeviceTypesWithBlock:(void(^)(NSArray<GSHDeviceCategoryM*> *list,NSError *error))block;
 
+// v2.4.0 获取设备品类
++ (NSURLSessionDataTask *)getSystemDeviceTemplateWithBlock:(void(^)(NSArray<GSHDeviceKindM*> *list,NSError *error))block;
+
 // 开组网（通知网关搜索设备，scanStatus==1为开组网，scanStatus==0为关组网）
 + (NSURLSessionDataTask *)searchDevicesWithFamilyId:(NSString *)familyId scanStatus:(NSString *)scanStatus deviceSn:(NSString *)deviceSn block:(void(^)(NSError *error))block;
 // 查询组网到的设备
@@ -122,6 +159,9 @@ extern NSString * const GSHDeviceAddFinishNotification;
 
 // 获取所有设备
 +(NSURLSessionDataTask*)getDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
+
+// v2.4 设备管理 - 获取所有设备
++(NSURLSessionDataTask*)getFamilyDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
 
 // 设备控制
 + (void)deviceControlWithDeviceId:(NSString *)deviceId deviceSN:(NSString *)deviceSN familyId:(NSString *)familyId basMeteId:(NSString *)basMeteId value:(NSString *)value block:(void(^)(NSError *error))block;
