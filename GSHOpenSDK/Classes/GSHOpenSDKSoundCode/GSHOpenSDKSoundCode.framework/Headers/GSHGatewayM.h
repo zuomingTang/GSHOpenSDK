@@ -38,6 +38,7 @@
 @property(nonatomic, copy) NSString *launchtime; //投入使用时间
 @property(nonatomic, copy) NSString *manufacturerName; //厂家名称
 @property(nonatomic, copy) NSString *siteId; //网点id
+@property(nonatomic, copy) NSString *homePageIcon; //网关图片
 @end
 
 @interface GSHGatewayManager : NSObject
