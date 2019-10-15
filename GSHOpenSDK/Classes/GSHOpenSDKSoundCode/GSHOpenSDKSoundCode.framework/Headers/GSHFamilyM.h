@@ -40,6 +40,8 @@ typedef enum : NSInteger {
 @property (nonatomic,copy)NSString *picPath;        //家庭头像
 @property (nonatomic,strong)NSNumber *project;      //项目Id
 @property (nonatomic,strong)NSNumber *deviceCount;  //设备总数
+@property (nonatomic,strong)NSNumber *familyDevcieCount;  // 家庭设备总数
+@property (nonatomic,strong)NSNumber *familyFloorCount;  // 楼层数量
 @property (nonatomic,assign)GSHFamilyMPermissions permissions;  //权限
 @property (nonatomic,assign)GSHFamilyMGWStatus onlineStatus;    //网关状态
 @property (nonatomic,strong)NSMutableArray<GSHFloorM*> *floor;  //房间楼层信息

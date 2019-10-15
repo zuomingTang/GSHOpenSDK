@@ -8,6 +8,8 @@
 
 #import "GSHBaseModel.h"
 #import <UIKit/UIKit.h>
+#import "GSHGatewayM.h"
+#import "GSHFamilyM.h"
 
 extern NSString * const GSHDeviceAddFinishNotification;
 
@@ -161,7 +163,7 @@ extern NSString * const GSHDeviceAddFinishNotification;
 +(NSURLSessionDataTask*)getDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
 
 // v2.4 设备管理 - 获取所有设备
-+(NSURLSessionDataTask*)getFamilyDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
++(NSURLSessionDataTask*)getFamilyDevicesListWithFamilyId:(NSString*)familyId block:(void(^)(GSHGatewayM *gatewayM,GSHFamilyM *familyM,NSError *error))block;
 
 // 设备控制
 + (void)deviceControlWithDeviceId:(NSString *)deviceId deviceSN:(NSString *)deviceSN familyId:(NSString *)familyId basMeteId:(NSString *)basMeteId value:(NSString *)value block:(void(^)(NSError *error))block;

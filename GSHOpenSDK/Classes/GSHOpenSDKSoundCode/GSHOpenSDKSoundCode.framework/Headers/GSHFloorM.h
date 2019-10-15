@@ -20,6 +20,7 @@ typedef enum : NSUInteger {
 @interface GSHFloorM : GSHBaseModel
 @property(nonatomic,strong)NSNumber *floorId;                           //楼层Id
 @property(nonatomic,copy)NSString *floorName;                           //楼层名字
+@property(nonatomic,strong)NSNumber *floorDeviceCount;                  //楼层设备数量
 @property(nonatomic,strong)NSMutableArray<GSHRoomM*> *rooms;            //楼层所属房间
 @property(nonatomic,strong)NSMutableArray<GSHSensorM*> *sensorMsgList;  //传感器列表
 //楼层权限信息，通过房间的权限计算得出
