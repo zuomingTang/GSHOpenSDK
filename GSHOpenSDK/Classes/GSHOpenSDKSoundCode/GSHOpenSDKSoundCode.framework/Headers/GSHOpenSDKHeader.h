@@ -32,4 +32,6 @@
 #import <GSHOpenSDKSoundCode/GSHFileManager.h>
 #import <GSHOpenSDKSoundCode/GSHWebSocketClient.h>
 
+#import <GSHOpenSDKSoundCode/GSHDeviceInfoDefines.h>
+
 #endif /* GSHOpenSDKHeader_h */
