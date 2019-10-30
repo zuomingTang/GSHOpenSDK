@@ -88,7 +88,7 @@ typedef enum : NSInteger {
 +(NSURLSessionDataTask*)getAllDevicesWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHFloorM*> *list,NSError *error))block;
 
 //绑定别名
-+(NSURLSessionDataTask*)postBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName block:(void(^)(NSError *error))block;
++(NSURLSessionDataTask*)postBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName mhomeName:(NSString*)mhomeName block:(void(^)(NSError *error))block;
 
 //解绑别名
 +(NSURLSessionDataTask*)postUnBindFamilyWithFamilyId:(NSString*)familyId aliasName:(NSString*)aliasName block:(void(^)(NSError *error))block;
