@@ -92,7 +92,7 @@
 // 获取场景列表
 + (NSURLSessionDataTask *)getSceneListWithFamilyId:(NSString *)familyId
                                           currPage:(NSString *)currPage
-                                             block:(void(^)(NSArray<GSHOssSceneM*>*list,NSError *error))block;
+                                             block:(void(^)(NSArray<GSHOssSceneM*>*list,NSNumber *sceneTotal,NSError *error))block;
 
 // 场景列表排序
 + (NSURLSessionDataTask *)sortSceneWithFamilyId:(NSString *)familyId

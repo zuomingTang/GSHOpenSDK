@@ -38,6 +38,7 @@ typedef enum : NSInteger {
 @property (nonatomic,copy)NSString *gatewayId;      //网关Id
 @property (nonatomic,copy)NSString *projectName;    //项目名
 @property (nonatomic,copy)NSString *picPath;        //家庭头像
+@property (nonatomic,copy)NSString *mhomeId;       //绑定别名
 @property (nonatomic,strong)NSNumber *project;      //项目Id
 @property (nonatomic,strong)NSNumber *deviceCount;  //设备总数
 @property (nonatomic,strong)NSNumber *familyDevcieCount;  // 家庭设备总数
