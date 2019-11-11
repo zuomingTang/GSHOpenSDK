@@ -78,12 +78,20 @@ extern NSString * const GSHDeviceAddFinishNotification;
 
 @end
 
+@class GSHDeviceM;
 @interface GSHDeviceTypeM : GSHBaseModel
 
 @property (nonatomic , strong) NSNumber *deviceKind;
 @property (nonatomic , strong) NSNumber *deviceType;
 @property (nonatomic , copy) NSString *deviceTypeStr;
-@property (nonatomic,strong) NSMutableArray <GSHDeviceModelM *> *deviceModelList;
+@property (nonatomic , strong) NSMutableArray <GSHDeviceModelM *> *deviceModelList;
+
+// 此处增加的属性，用于获取场景模版详情时解析数据
+@property (nonatomic , strong) NSString *picPath;
+@property (nonatomic , strong) NSMutableArray <GSHDeviceM *> *devices;
+@property (nonatomic , strong) NSMutableArray <GSHDeviceExtM *> *exts;
+
+
 @end
 
 @interface GSHDeviceKindM : GSHBaseModel

@@ -11,6 +11,47 @@
 //#import "GSHFloorM.h"
 @class GSHFloorM;
 
+// 场景banner model , 此model可封装为全局通用，暂时先放在GSHSceneM中
+@interface GSHSceneBannerM : GSHBaseModel
+
+@property (nonatomic,strong) NSNumber *bannerId;
+@property (nonatomic,copy) NSString *content;
+@property (nonatomic,copy) NSString *picUrl;
+@property (nonatomic,copy) NSString *title;
+
+@end
+
+// 场景模版model
+@interface GSHSceneTemplateM : GSHBaseModel
+
+@property (nonatomic,copy) NSString *descriptionStr;
+@property (nonatomic,copy) NSString *imgUrl;
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,strong) NSNumber *sceneTemplateId;
+
+@end
+
+// 场景模版详情model
+@interface GSHSceneTemplateDetailInfoM : GSHBaseModel
+
+@property (nonatomic,copy) NSString *descriptionStr;
+@property (nonatomic,strong) NSNumber *sceneTemplateId;
+@property (nonatomic,copy) NSString *name;
+@property (nonatomic,copy) NSString *imgUrl;
+@property (nonatomic,strong) NSMutableArray <GSHDeviceTypeM *> *deviceTypes;
+
+@end
+
+@class GSHOssSceneM;
+// v3.0 场景列表model
+@interface GSHSceneListM : GSHBaseModel
+
+@property (nonatomic,strong) NSMutableArray <GSHSceneBannerM *> *banners;
+@property (nonatomic,strong) NSMutableArray <GSHSceneTemplateM *> *scenarioTpls;
+@property (nonatomic,strong) NSNumber *total;   // 场景总数
+@property (nonatomic,strong) NSMutableArray <GSHOssSceneM *> *scenarios;
+
+@end
 
 @interface GSHOssSceneM : GSHBaseModel
 
@@ -92,7 +133,7 @@
 // 获取场景列表
 + (NSURLSessionDataTask *)getSceneListWithFamilyId:(NSString *)familyId
                                           currPage:(NSString *)currPage
-                                             block:(void(^)(NSArray<GSHOssSceneM*>*list,NSNumber *sceneTotal,NSError *error))block;
+                                             block:(void(^)(GSHSceneListM *sceneListM,NSError *error))block;
 
 // 场景列表排序
 + (NSURLSessionDataTask *)sortSceneWithFamilyId:(NSString *)familyId
@@ -135,5 +176,13 @@
 + (void)getSceneFileFromOssWithFid:(NSString *)fid
                              block:(void(^)(NSString *json,NSError *error))block;
 
+// v3.0新增 -- 获取所有情景模板
++ (NSURLSessionDataTask *)getSceneTemplateListWithFamilyId:(NSString *)familyId
+                         isOnlyRecommend:(NSString *)isOnlyRecommend
+                                   block:(void(^)(NSArray<GSHSceneTemplateM*>*list,NSError *error))block;
+
+// v3.0新增 -- 获取情景模板详情
++ (NSURLSessionDataTask *)getSceneTemplateDetailWithSceneTemplateId:(NSNumber *)sceneTemplateId
+                                                              block:(void(^)(GSHSceneTemplateDetailInfoM *sceneTemplateDetailInfoM,NSError *error))block;
 @end
 
