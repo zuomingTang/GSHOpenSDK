@@ -32,7 +32,7 @@ typedef enum : NSUInteger {
 
 @interface GSHFloorManager : NSObject
 //首页单独获取楼层房间信息
-+(NSURLSessionDataTask*)getHomeVCFloorListWithFamilyId:(NSString*)familyId flag:(NSNumber*)flag block:(void(^)(NSArray<GSHFloorM*> *floorList,NSError *error,NSString *gatewayId,NSString *onlineStatus))block;
++(NSURLSessionDataTask*)getHomeVCFloorListWithFamilyId:(NSString*)familyId flag:(NSNumber*)flag block:(void(^)(NSArray<GSHFloorM*> *floorList,NSError *error,NSString *gatewayId,NSString *onlineStatus,NSInteger familyDeviceCount))block;
 
 //获取楼层房间信息
 +(NSURLSessionDataTask*)getFloorListWithFamilyId:(NSString*)familyId block:(void(^)(NSArray<GSHFloorM*> *floorList,NSError *error))block;

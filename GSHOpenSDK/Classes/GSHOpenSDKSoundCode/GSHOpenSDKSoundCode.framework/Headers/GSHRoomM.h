@@ -45,4 +45,7 @@ typedef enum : NSUInteger {
 
 //删除房间信息
 +(NSURLSessionDataTask*)postDeleteRoomWithFamilyId:(NSString*)familyId floorId:(NSNumber*)floorId roomId:(NSNumber*)roomId block:(void(^)(NSError *error))block;
+
+//获取房间设备与场景
++(NSURLSessionDataTask*)getFamilyDeviceAndScenariosWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId block:(void(^)(NSArray<GSHDeviceM*> *devices,NSArray<GSHSceneM*> *scenarios,NSError *error))block;
 @end
