@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSHOpenSDK'
-  s.version          = '0.2.68'
+  s.version          = '0.2.69'
   s.summary          = 'GSHOpenSDK'
   
   s.subspec 'GSHOpenSDKSoundCode' do |ssc|
@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
       ssc.dependency 'FMDB', '2.6.2'
       ssc.dependency 'FMDBHelpers', '0.0.7'
       ssc.dependency 'EZOpenSDK', '4.8.6'
+      ssc.dependency 'CocoaAsyncSocket', '7.5.0'
+      ssc.dependency 'SocketRocket', '0.5.1'
       ssc.dependency 'OpenSSL-Universal', '1.0.2.13'
       ssc.dependency 'Protobuf', '3.6.0'
       ssc.requires_arc = false
@@ -34,7 +36,7 @@ TODO: GSHOpenSDK
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zuomingTang' => '414933949@qq.com' }
-  s.source           = { :git => 'https://github.com/zuomingTang/GSHOpenSDK.git', :tag => '0.2.68' }
+  s.source           = { :git => 'https://github.com/zuomingTang/GSHOpenSDK.git', :tag => '0.2.69' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   
   s.source_files = 'GSHOpenSDK/Classes/*'
