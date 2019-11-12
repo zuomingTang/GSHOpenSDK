@@ -42,17 +42,6 @@
 
 @end
 
-@class GSHOssSceneM;
-// v3.0 场景列表model
-@interface GSHSceneListM : GSHBaseModel
-
-@property (nonatomic,strong) NSMutableArray <GSHSceneBannerM *> *banners;
-@property (nonatomic,strong) NSMutableArray <GSHSceneTemplateM *> *scenarioTpls;
-@property (nonatomic,strong) NSNumber *total;   // 场景总数
-@property (nonatomic,strong) NSMutableArray <GSHOssSceneM *> *scenarios;
-
-@end
-
 @interface GSHOssSceneM : GSHBaseModel
 
 @property (nonatomic , strong) NSNumber *backgroundId;
@@ -70,6 +59,16 @@
 
 - (BOOL)isSelected;
 - (void)setIsSelected:(BOOL)isSelected;
+
+@end
+
+// v3.0 场景列表model
+@interface GSHSceneListM : GSHBaseModel
+
+@property (nonatomic,strong) NSMutableArray <GSHSceneBannerM *> *banners;
+@property (nonatomic,strong) NSMutableArray <GSHSceneTemplateM *> *scenarioTpls;
+@property (nonatomic,strong) NSNumber *total;   // 场景总数
+@property (nonatomic,strong) NSMutableArray <GSHOssSceneM *> *scenarios;
 
 @end
 
