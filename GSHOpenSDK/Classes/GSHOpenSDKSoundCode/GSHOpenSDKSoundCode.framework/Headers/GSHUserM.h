@@ -111,4 +111,6 @@ typedef enum : NSUInteger {
 +(NSURLSessionDataTask*)postUpdatePhoneWithOldPhoneNumber:(NSString*)phoneNumber verifyCode:(NSString*)verifyCode block:(void(^)(NSString *token,NSError *error))block;
 //更改手机号码
 +(NSURLSessionDataTask*)postUpdatePhoneWithOldPhoneNumber:(NSString*)oldPhoneNumber newPhoneNumber:(NSString*)newPhoneNumber token:(NSString*)token verifyCode:(NSString*)verifyCode block:(void(^)(GSHUserInfoM *userInfo,NSError *error))block;
+//重置密码验证
++(NSURLSessionDataTask*)postResetPwdValidateWithPhone:(NSString*)phone vcode:(NSString*)vcode block:(void(^)(NSString *token,NSError *error))block;
 @end

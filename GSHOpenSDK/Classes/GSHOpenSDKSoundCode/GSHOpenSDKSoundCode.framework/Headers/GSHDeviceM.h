@@ -11,6 +11,8 @@
 #import "GSHGatewayM.h"
 #import "GSHFamilyM.h"
 
+@class GSHSceneM;
+
 extern NSString * const GSHDeviceAddFinishNotification;
 
 @interface GSHMeteBindedInfoListM : GSHBaseModel
@@ -179,6 +181,9 @@ extern NSString * const GSHDeviceAddFinishNotification;
 #pragma mark--首页单独
 //首页单独获取设备
 +(NSURLSessionDataTask*)getHomeVCDevicesListWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId pageIndex:(NSNumber*)pageIndex block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
+
+//获取房间设备与场景
++(NSURLSessionDataTask*)getFamilyDeviceAndScenariosWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId floorId:(NSNumber*)floorId block:(void(^)(NSArray<GSHDeviceM*> *devices,NSArray<GSHSceneM*> *scenarios,NSError *error))block;
 
 //首页单独交换设备位置
 +(NSURLSessionDataTask*)postHomeVCMoveDeviceWithRoomId:(NSNumber*)roomId deviceId:(NSString*)deviceId targetDeviceId:(NSString*)targetDeviceId block:(void(^)(NSError *error))block;
