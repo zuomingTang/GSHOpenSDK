@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
       ssc.dependency 'SocketRocket', '0.5.1'
       ssc.dependency 'OpenSSL-Universal', '1.0.2.13'
       ssc.dependency 'Protobuf', '3.6.0'
+      ssc.dependency 'LBXDataHandler', '1.0.3'
       ssc.requires_arc = false
   end
 
