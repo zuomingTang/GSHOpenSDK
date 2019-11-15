@@ -61,9 +61,6 @@ typedef enum : NSInteger {
 //获取用户家庭指数
 +(NSURLSessionDataTask*)getFamilyIndexWithFamilyId:(NSString*)familyId block:(void(^)(NSDictionary *familyIndex,NSError *error))block;
 
-//获取指数设备
-+(NSURLSessionDataTask*)getFamilyIndexDeviceWithFamilyId:(NSString*)familyId floorId:(NSNumber*)floorId block:(void(^)(NSDictionary *familyData,NSError *error))block;
-
 //获取用户家庭列表（首页专用）
 +(NSURLSessionDataTask*)getHomeVCFamilyListWithblock:(void(^)(NSArray<GSHFamilyM*> *familyList,NSError *error))block;
 

@@ -52,6 +52,7 @@ typedef enum : NSUInteger {
 @end
 
 @interface GSHSensorM : GSHDeviceM
+@property(nonatomic,strong)NSString *statusDesc;
 @property(nonatomic,strong)NSArray<GSHSensorMonitorM*> *attributeList;  //每个传感器都有一个监控值列表（取最新数据）
 //最新数据字符串
 - (NSString *)monitorString;
@@ -90,4 +91,7 @@ typedef enum : NSUInteger {
 
 // 更新组合传感器中的子传感器
 + (NSURLSessionDataTask *)postSensorGroupUpdataWithFamilyId:(NSString*)familyId deviceId:(NSString*)deviceId deviceType:(NSString*)deviceType roomId:(NSString*)roomId deviceName:(NSString*)deviceName block:(void(^)(NSError *error))block;
+
+//获取指数设备
++(NSURLSessionDataTask*)getFamilyIndexDeviceWithFamilyId:(NSString*)familyId floorId:(NSNumber*)floorId block:(void(^)(NSArray<GSHSensorM*> *list,NSError *error))block;
 @end
