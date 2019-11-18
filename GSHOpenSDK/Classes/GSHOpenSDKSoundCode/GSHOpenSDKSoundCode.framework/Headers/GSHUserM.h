@@ -53,6 +53,8 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy)NSString *nick;              //昵称
 @property (nonatomic, copy)NSString *picPath;           //头像
 @property (nonatomic, copy)NSString *phone;             //手机号码
+@property (nonatomic, copy)NSString *birth ;            //生日
+@property (nonatomic,strong)NSNumber *sex;              //性别
 @property (nonatomic, copy)NSMutableArray<GSHThirdPartyUserM*> *thirdPartyUserList; //第三方绑定信息
 @end
 //登录用户信息
@@ -61,6 +63,7 @@ typedef enum : NSUInteger {
 @property(nonatomic,copy)NSString *userId;                  //userId
 @property(nonatomic,copy)NSString *phone;                   //手机号码
 @property(nonatomic,copy)NSString *currentFamilyId;         //注册或登录后 -- 返回当前家庭id
+@property(nonatomic,strong)NSNumber *voiceStatus;           //语音助手
 -(void)updataCurrentFamilyId:(NSString*)currentFamilyId;    //更行当前用户当前家庭Id
 @end
 
