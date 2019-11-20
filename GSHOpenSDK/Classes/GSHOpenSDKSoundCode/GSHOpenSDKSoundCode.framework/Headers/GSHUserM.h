@@ -65,6 +65,7 @@ typedef enum : NSUInteger {
 @property(nonatomic,copy)NSString *currentFamilyId;         //注册或登录后 -- 返回当前家庭id
 @property(nonatomic,strong)NSNumber *voiceStatus;           //语音助手
 -(void)updataCurrentFamilyId:(NSString*)currentFamilyId;    //更行当前用户当前家庭Id
+-(void)updataVoiceStatus:(NSNumber*)voiceStatus;            //更行当前用户语音状态
 @end
 
 @interface GSHUserManager : NSObject
@@ -116,4 +117,6 @@ typedef enum : NSUInteger {
 +(NSURLSessionDataTask*)postUpdatePhoneWithOldPhoneNumber:(NSString*)oldPhoneNumber newPhoneNumber:(NSString*)newPhoneNumber token:(NSString*)token verifyCode:(NSString*)verifyCode block:(void(^)(GSHUserInfoM *userInfo,NSError *error))block;
 //重置密码验证
 +(NSURLSessionDataTask*)postResetPwdValidateWithPhone:(NSString*)phone vcode:(NSString*)vcode block:(void(^)(NSString *token,NSError *error))block;
+//设置语音状态
++(NSURLSessionDataTask*)postSetVoiceService:(BOOL)open block:(void(^)(NSError *error))block;
 @end
