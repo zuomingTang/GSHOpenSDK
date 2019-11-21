@@ -47,7 +47,7 @@
 @property (nonatomic , assign) NSInteger week;
 @property (nonatomic , strong) GSHDeviceM *device;
 
-@property (nonatomic , strong) NSMutableArray<GSHDeviceTypeM *> *deviceTypes; // 设备类型 (v3.0 用于联动模版列表 )
+@property (nonatomic , strong) GSHDeviceTypeM *deviceTypeModel; // 设备类型 (v3.0 用于联动模版列表 )
 
 - (NSString *)getWeekStrWithIndexSet:(NSMutableIndexSet *)tmpSet;
 - (NSString *)getDateTimer;
