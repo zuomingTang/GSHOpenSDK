@@ -33,6 +33,7 @@
 @property (nonatomic , strong) NSNumber *scenarioId;    // 执行动作 -- 情景id
 @property (nonatomic , strong) NSNumber *businessId;    // 场景业务id
 @property (nonatomic , strong) GSHDeviceM *device;
+@property (nonatomic , strong) NSMutableArray<GSHDeviceTypeM *> *deviceTypes; // 设备类型 (v3.0 用于联动模版列表 )
 
 - (NSString *)getActionName;
 
@@ -46,6 +47,8 @@
 @property (nonatomic , assign) NSInteger week;
 @property (nonatomic , strong) GSHDeviceM *device;
 
+@property (nonatomic , strong) GSHDeviceTypeM *deviceTypeModel; // 设备类型 (v3.0 用于联动模版列表 )
+
 - (NSString *)getWeekStrWithIndexSet:(NSMutableIndexSet *)tmpSet;
 - (NSString *)getDateTimer;
 
@@ -55,10 +58,12 @@
 
 @property (nonatomic , copy) NSString *triggerId;   //触发条件id
 @property (nonatomic , copy) NSString *name;   //触发条件名称
-@property (nonatomic , strong) NSMutableArray<GSHAutoTriggerConditionListM *> *conditionList;     // 触发条件
+@property (nonatomic , strong) NSMutableArray<GSHAutoTriggerConditionListM *> *conditionList;     // 必选条件
+@property (nonatomic , strong) NSMutableArray<GSHAutoTriggerConditionListM *> *optionalConditionList;   // 可选条件
 @property (nonatomic , strong) NSNumber *relationType;   //条件关系,0:满足所有条件 1:满足任一条件
 
-- (BOOL)isSetTime;  // 是否设置了时间
+- (BOOL)isSetRequiredTime;  // 必选条件是否设置了时间
+- (BOOL)isSetOptionalTime;  // 可选条件是否设置了时间
 
 @end
 
@@ -75,6 +80,12 @@
 @property (nonatomic , assign) NSInteger week;   // 生效时间段 -- 重复次数
 @property (nonatomic , strong) NSMutableArray<GSHAutoActionListM *> *actionList;     // 执行动作
 @property (nonatomic , strong) GSHAutoTriggerM *trigger;     // 执行条件
+
+ // v3.0 联动模版信息
+@property (nonatomic , strong) NSNumber *tplId; // 联动模版id
+@property (nonatomic , copy) NSString *tplName;   //联动模版名称
+@property (nonatomic , copy) NSString *tplDesc;   //联动模版简介
+@property (nonatomic , copy) NSString *picPath;   //联动模版图片
 
 - (NSString *)getEndTime;
 - (NSString *)getStartTime;
@@ -140,6 +151,14 @@
 // 从oss服务端获取联动数据
 + (void)getAutoFileFromOssWithFid:(NSString *)fid
                             block:(void(^)(NSString *json,NSError *error))block;
+
+// v3.0 -- 获取联动模板列表
++ (NSURLSessionDataTask *)getAutoTemplateListWithFamilyId:(NSString *)familyId block:(void(^)(NSArray<GSHAutoM *> *autoTemplateList,NSError *error))block;
+
+// v3.0 -- 获取推荐自动化模板条件设备及动作设备列表
++ (NSURLSessionDataTask *)getAutoTemplateDeviceListWithFamilyId:(NSString *)familyId
+                                                     templateId:(NSNumber *)templateId
+                                                          block:(void(^)(NSArray<GSHDeviceM *> *actionDeviceList,NSArray<GSHDeviceM *> *optTriggerDeviceList,NSArray<GSHDeviceM *> *reqTriggerDeviceList,NSError *error))block;
 
 @end
 

@@ -16,6 +16,7 @@ typedef enum : NSUInteger {
     GSHMsgTypeKeyScenarioWarn,                          // 场景消息提醒
     GSHMsgTypeKeyAutomationWarn,                        // 联动消息提醒
     GSHMsgTypeKeyAlarmWarn,                             // 告警消息提醒
+    GSHMsgTypeKeyNoDisturb,                             // 消息免打扰
 } GSHMsgTypeKey;
 
 @interface GSHMessageM : NSObject

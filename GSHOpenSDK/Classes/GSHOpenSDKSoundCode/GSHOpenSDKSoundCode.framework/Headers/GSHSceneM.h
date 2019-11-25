@@ -140,10 +140,10 @@
                                           block:(void(^)(NSError *error))block;
 
 // 执行场景
-+ (void)executeSceneWithFamilyId:(NSString *)familyId
-                       gateWayId:(NSString *)gateWayId
-                      scenarioId:(NSString *)scenarioId
-                           block:(void(^)(NSError *error))block;
++ (NSURLSessionDataTask *)executeSceneWithFamilyId:(NSString *)familyId
+                                         gateWayId:(NSString *)gateWayId
+                                        scenarioId:(NSString *)scenarioId
+                                             block:(void(^)(NSError *error))block;
 
 
 // 校验语音关键词

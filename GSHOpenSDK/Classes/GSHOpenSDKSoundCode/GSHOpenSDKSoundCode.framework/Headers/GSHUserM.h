@@ -55,6 +55,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, copy)NSString *phone;             //手机号码
 @property (nonatomic, copy)NSString *birth ;            //生日
 @property (nonatomic,strong)NSNumber *sex;              //性别
+@property (nonatomic,strong)NSNumber *hasLoginPwd;      //是否有密码
 @property (nonatomic, copy)NSMutableArray<GSHThirdPartyUserM*> *thirdPartyUserList; //第三方绑定信息
 @end
 //登录用户信息
