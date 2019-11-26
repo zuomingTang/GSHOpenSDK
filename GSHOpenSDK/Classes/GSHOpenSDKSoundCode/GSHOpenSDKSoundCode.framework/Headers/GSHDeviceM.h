@@ -152,6 +152,9 @@ extern NSString * const GSHDeviceAddFinishNotification;
 // 获取设备品类
 + (NSURLSessionDataTask *)getDeviceTypesWithBlock:(void(^)(NSArray<GSHDeviceCategoryM*> *list,NSError *error))block;
 
+// 通过二维码获取设备信息
++ (NSURLSessionDataTask *)postDeviceModelListWithQRCode:(NSString*)qrCode block:(void(^)(NSArray<GSHDeviceModelM*> *list,NSString *sn,NSError *error))block;
+
 // v2.4.0 获取设备品类
 + (NSURLSessionDataTask *)getSystemDeviceTemplateWithBlock:(void(^)(NSArray<GSHDeviceKindM*> *list,NSError *error))block;
 
