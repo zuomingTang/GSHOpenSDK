@@ -177,11 +177,12 @@
 
 // v3.0新增 -- 获取所有情景模板
 + (NSURLSessionDataTask *)getSceneTemplateListWithFamilyId:(NSString *)familyId
-                         isOnlyRecommend:(NSString *)isOnlyRecommend
-                                   block:(void(^)(NSArray<GSHSceneTemplateM*>*list,NSError *error))block;
+                                           isOnlyRecommend:(NSString *)isOnlyRecommend
+                                                     block:(void(^)(NSArray<GSHSceneTemplateM*>*list,NSError *error))block;
 
 // v3.0新增 -- 获取情景模板详情
-+ (NSURLSessionDataTask *)getSceneTemplateDetailWithSceneTemplateId:(NSNumber *)sceneTemplateId
-                                                              block:(void(^)(GSHSceneTemplateDetailInfoM *sceneTemplateDetailInfoM,NSError *error))block;
++ (NSURLSessionDataTask *)getSceneTemplateDetailWithFamilyId:(NSString *)familyId
+                                             sceneTemplateId:(NSNumber *)sceneTemplateId
+                                                       block:(void(^)(GSHSceneTemplateDetailInfoM *sceneTemplateDetailInfoM,NSError *error))block;
 @end
 
