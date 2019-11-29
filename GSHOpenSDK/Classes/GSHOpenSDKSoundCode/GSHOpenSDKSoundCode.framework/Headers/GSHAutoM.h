@@ -117,6 +117,11 @@
                                          currPage:(NSString *)currPage
                                             block:(void(^)(NSArray<GSHOssAutoM*>*list,NSError *error))block;
 
+// v3.0 获取联动列表 -- 分页修改为传 联动id
++ (NSURLSessionDataTask *)getAutoListNewWithFamilyId:(NSString *)familyId
+                                          lastAutoId:(NSNumber *)lastAutoId
+                                               block:(void(^)(NSArray<GSHOssAutoM*>*list,NSError *error))block;
+
 // 修改联动 -- 开/关
 + (NSURLSessionDataTask *)updateAutoSwitchWithRuleId:(NSString *)ruleId
                                               status:(NSString *)status
