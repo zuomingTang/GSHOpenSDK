@@ -43,6 +43,7 @@ typedef enum : NSUInteger {
 @property (nonatomic , copy) NSString *batteryWarn;
 @property (nonatomic , copy) NSString *scenarioWarn;
 @property (nonatomic , copy) NSString *systemWarn;
+@property (nonatomic , copy) NSString *noDisturb;
 
 @end
 
