@@ -159,7 +159,9 @@
                             block:(void(^)(NSString *json,NSError *error))block;
 
 // v3.0 -- 获取联动模板列表
-+ (NSURLSessionDataTask *)getAutoTemplateListWithFamilyId:(NSString *)familyId block:(void(^)(NSArray<GSHAutoM *> *autoTemplateList,NSError *error))block;
++ (NSURLSessionDataTask *)getAutoTemplateListWithFamilyId:(NSString *)familyId
+                                          isOnlyRecommend:(NSString *)isOnlyRecommend
+                                                    block:(void(^)(NSArray<GSHAutoM *> *autoTemplateList,NSError *error))block;
 
 // v3.0 -- 获取推荐自动化模板条件设备及动作设备列表
 + (NSURLSessionDataTask *)getAutoTemplateDeviceListWithFamilyId:(NSString *)familyId
