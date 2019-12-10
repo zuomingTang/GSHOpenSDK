@@ -135,6 +135,7 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,strong) NSString *launchtime;       // 设备入网时间
 
 @property(nonatomic,strong) NSString *homePageIcon;     // 首页设备图标
+@property(nonatomic,strong) NSString *controlPicPath;   // 设备控制页面 - 设备图
 
 @property(nonatomic,strong) NSMutableArray <GSHDeviceExtM *> *exts;                 //控制参数
 @property(nonatomic,strong) NSMutableArray <GSHDeviceAttributeM *> *attribute;      //设备可控制

@@ -24,6 +24,7 @@
 
 // 网关
 #define GateWayDeviceType 32767
+#define GateWayDeviceType2 32766
 
 // 设备在线离线状态属性id
 #define GSHDeviceOnLineStateMeteId @"026FFF00DE0001"
