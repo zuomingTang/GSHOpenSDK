@@ -21,7 +21,6 @@
 @property (nonatomic , strong) NSNumber *type;
 @property (nonatomic , strong) NSNumber *status;
 @property (nonatomic , strong) NSNumber *ruleId;
-@property (nonatomic , strong) NSNumber *autoTplId; // 联动模版id 
 
 @end
 

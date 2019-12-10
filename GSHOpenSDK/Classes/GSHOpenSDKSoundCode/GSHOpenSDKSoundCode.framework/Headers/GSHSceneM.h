@@ -56,7 +56,6 @@
 @property (nonatomic , strong) NSNumber *roomId;
 @property (nonatomic , strong) NSString *voiceKeyword;
 @property (nonatomic , strong) NSNumber *businessId;
-@property (nonatomic , strong) NSNumber *scenarioTplId;
 
 - (BOOL)isSelected;
 - (void)setIsSelected:(BOOL)isSelected;
