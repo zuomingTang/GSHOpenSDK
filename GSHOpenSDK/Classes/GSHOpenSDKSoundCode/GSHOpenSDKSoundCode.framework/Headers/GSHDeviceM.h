@@ -132,7 +132,8 @@ extern NSString * const GSHDeviceAddFinishNotification;
 @property(nonatomic,strong) NSNumber *onlineStatus;     // 在线
 @property(nonatomic,strong) NSNumber *permissionState;  // 权限状态
 @property(nonatomic,strong) NSNumber *rank;             // 排名
-@property(nonatomic,strong) NSString *launchtime;       // 设备入网时间
+@property(nonatomic,copy) NSString *launchtime;       // 设备入网时间
+@property(nonatomic,copy) NSString *globalId;         // globalId
 
 @property(nonatomic,strong) NSString *homePageIcon;     // 首页设备图标
 @property(nonatomic,strong) NSString *controlPicPath;   // 设备控制页面 - 设备图
@@ -185,6 +186,9 @@ extern NSString * const GSHDeviceAddFinishNotification;
 #pragma mark--首页单独
 //首页单独获取设备
 +(NSURLSessionDataTask*)getHomeVCDevicesListWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId pageIndex:(NSNumber*)pageIndex block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
+
+//首页设备排序
++(NSURLSessionDataTask*)getHomeVCSortDevice:(NSArray<NSString*>*)globalIdList block:(void(^)(NSError *error))block;
 
 //获取房间设备与场景
 +(NSURLSessionDataTask*)getFamilyDeviceAndScenariosWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId floorId:(NSNumber*)floorId block:(void(^)(NSArray<GSHDeviceM*> *devices,NSArray<GSHSceneM*> *scenarios,NSError *error))block;
