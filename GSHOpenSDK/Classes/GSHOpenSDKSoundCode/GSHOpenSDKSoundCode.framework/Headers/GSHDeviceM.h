@@ -188,7 +188,7 @@ extern NSString * const GSHDeviceAddFinishNotification;
 +(NSURLSessionDataTask*)getHomeVCDevicesListWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId pageIndex:(NSNumber*)pageIndex block:(void(^)(NSArray<GSHDeviceM*> *list,NSError *error))block;
 
 //首页设备排序
-+(NSURLSessionDataTask*)getHomeVCSortDevice:(NSArray<NSString*>*)globalIdList block:(void(^)(NSError *error))block;
++(NSURLSessionDataTask*)postHomeVCSortDeviceRoomId:(NSNumber*)roomId globalIdList:(NSArray<NSString*>*)globalIdList block:(void(^)(NSError *error))block;
 
 //获取房间设备与场景
 +(NSURLSessionDataTask*)getFamilyDeviceAndScenariosWithFamilyId:(NSString*)familyId roomId:(NSNumber*)roomId floorId:(NSNumber*)floorId block:(void(^)(NSArray<GSHDeviceM*> *devices,NSArray<GSHSceneM*> *scenarios,NSError *error))block;
