@@ -41,6 +41,8 @@
 // 场景模版详情model
 @interface GSHSceneTemplateDetailInfoM : GSHBaseModel
 
+@property (nonatomic,copy) NSString *bgImgUrl;  // 场景背景图url
+@property (nonatomic,strong) NSNumber *bgImgId; // 场景背景图id
 @property (nonatomic,copy) NSString *descriptionStr;
 @property (nonatomic,strong) NSNumber *sceneTemplateId;
 @property (nonatomic,copy) NSString *name;
