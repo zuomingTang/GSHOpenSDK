@@ -16,11 +16,13 @@
 
 // 萤石猫眼
 #define GSHYingShiMaoYanDeviceType @(15)
-
 // 萤石摄像头
 #define GSHYingShiSheXiangTou1DeviceType @(16)
 // 萤石摄像头
 #define GSHYingShiSheXiangTou2DeviceType @(17)
+
+// 声必可
+#define GSHShengBiKeDeviceType @(18)
 
 // 网关
 #define GateWayDeviceType 32767
