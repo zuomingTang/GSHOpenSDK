@@ -94,7 +94,7 @@
 @interface GSHSceneM : GSHBaseModel 
 
 @property (nonatomic , strong) NSNumber *backgroundId;   //背景图片id
-@property (nonatomic , strong) NSString *picUrl;   //背景图片url
+@property (nonatomic , strong) NSString *backgroundUrl;   //背景图片url
 @property (nonatomic , strong) NSNumber *familyId;   //家庭id
 @property (nonatomic , strong) NSNumber *floorId;   //楼层id
 @property (nonatomic , copy) NSString *floorName;   //楼层名称
