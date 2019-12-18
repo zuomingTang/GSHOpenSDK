@@ -126,6 +126,7 @@
 // 修改联动 -- 开/关
 + (NSURLSessionDataTask *)updateAutoSwitchWithRuleId:(NSString *)ruleId
                                               status:(NSString *)status
+                                           gateWayId:(NSString *)gateWayId
                                             familyId:(NSString *)familyId
                                                block:(void(^)(NSError *error))block;
 

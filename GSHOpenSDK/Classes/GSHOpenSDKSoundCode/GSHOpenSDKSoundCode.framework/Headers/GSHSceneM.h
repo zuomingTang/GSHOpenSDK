@@ -11,6 +11,13 @@
 //#import "GSHFloorM.h"
 @class GSHFloorM;
 
+@interface GSHSceneBackgroundImageM : GSHBaseModel
+
+@property (nonatomic , strong) NSNumber *scenarioBgImgId;   //背景图片id
+@property (nonatomic , strong) NSString *picUrl;   //背景图片url
+
+@end
+
 // 场景banner model , 此model可封装为全局通用，暂时先放在GSHSceneM中
 @interface GSHSceneBannerM : GSHBaseModel
 
@@ -34,6 +41,8 @@
 // 场景模版详情model
 @interface GSHSceneTemplateDetailInfoM : GSHBaseModel
 
+@property (nonatomic,copy) NSString *bgImgUrl;  // 场景背景图url
+@property (nonatomic,strong) NSNumber *bgImgId; // 场景背景图id
 @property (nonatomic,copy) NSString *descriptionStr;
 @property (nonatomic,strong) NSNumber *sceneTemplateId;
 @property (nonatomic,copy) NSString *name;
@@ -45,6 +54,7 @@
 @interface GSHOssSceneM : GSHBaseModel
 
 @property (nonatomic , strong) NSNumber *backgroundId;
+@property (nonatomic , strong) NSString *backgroundUrl;   //背景图片url
 @property (nonatomic , strong) NSNumber *familyId;
 @property (nonatomic , copy) NSString *fid;
 @property (nonatomic , strong) NSNumber *scenarioId;
@@ -84,6 +94,7 @@
 @interface GSHSceneM : GSHBaseModel 
 
 @property (nonatomic , strong) NSNumber *backgroundId;   //背景图片id
+@property (nonatomic , strong) NSString *picUrl;   //背景图片url
 @property (nonatomic , strong) NSNumber *familyId;   //家庭id
 @property (nonatomic , strong) NSNumber *floorId;   //楼层id
 @property (nonatomic , copy) NSString *floorName;   //楼层名称
@@ -185,5 +196,8 @@
 + (NSURLSessionDataTask *)getSceneTemplateDetailWithFamilyId:(NSString *)familyId
                                              sceneTemplateId:(NSNumber *)sceneTemplateId
                                                        block:(void(^)(GSHSceneTemplateDetailInfoM *sceneTemplateDetailInfoM,NSError *error))block;
+
+// v3.0新增 -- 获取场景背景图片
++ (NSURLSessionDataTask *)getScenarioBackgroundImageListblock:(void(^)(NSArray<GSHSceneBackgroundImageM *>*list,NSError *error))block;
 @end
 

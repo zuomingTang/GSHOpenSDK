@@ -217,5 +217,12 @@ extern NSString * const GSHDeviceAddFinishNotification;
 
 // 解绑多控开关关联关系
 + (NSURLSessionDataTask *)unBindMultiControlWithDeviceId:(NSString *)deviceId deviceSn:(NSString *)deviceSn basMeteId:(NSString *)basMeteId relDeviceId:(NSString *)relDeviceId relDeviceSn:(NSString *)relDeviceSn relBasMeteId:(NSString *)relBasMeteId block:(void(^)(NSError *error))block;
+
+#pragma mark--声必可
++ (NSURLSessionDataTask *)addIpcDeviceWithFamilyId:(NSString *)familyId ipcName:(NSString *)ipcName ipcModel:(NSString *)ipcModel modelName:(NSString *)modelName areaId:(NSString *)areaId deviceSerial:(NSString *)deviceSerial firmwareVersion:(NSString *)firmwareVersion block:(void(^)(NSError *error))block;
+
++ (NSURLSessionDataTask *)updateIpcDeviceWithIpcId:(NSString *)ipcId ipcName:(NSString *)ipcName areaId:(NSString *)areaId newAreaId:(NSString *)newAreaId firmwareVersion:(NSString *)firmwareVersion block:(void(^)(NSError *error))block;
+
++ (NSURLSessionDataTask *)deleteIpcDeviceWithFamilyId:(NSString *)familyId ipcId:(NSString *)ipcId areaId:(NSString *)areaId block:(void(^)(NSError *error))block;
 @end
 
