@@ -47,6 +47,8 @@
 
 //获取网关信息
 +(NSURLSessionDataTask*)getGatewayWithFamilyId:(NSString*)familyId gatewayId:(NSString*)gatewayId block:(void(^)(GSHGatewayM *gateWayM ,NSError *error))block;
+//获取网关信息
++(NSURLSessionDataTask*)getGatewayStateWithGatewayMac:(NSString*)gatewayMac block:(void(^)(GSHGatewayM *gateWayM ,NSError *error))block;
 
 // 删除网关 /setting/deleteGW
 + (NSURLSessionDataTask *)deleteGWWithFamilyId:(NSString *)familyId password:(NSString*)password block:(void(^)(NSError *error))block;
