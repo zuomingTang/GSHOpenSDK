@@ -167,6 +167,14 @@
 #define GSHCoGasSensor_alarmMeteId @"020027004A0001" // 一氧化碳报警
 #define GSHCoGasSensor_electricMeteId   @"020027004B0001"   // 电量
 
+// 环境面板
+#define GSHHuanjingSensorDeviceType @(87)
+#define GSHHuanjingSensor_wenduMeteId   @"01005704020001" // 温度
+#define GSHHuanjingSensor_shiduMeteId   @"01005704050001" // 湿度
+#define GSHHuanjingSensor_pm25MeteId    @"010057200D0001" //  pm2.5
+#define GSHHuanjingSensor_co2MeteId     @"010057040D0001" // 二氧化碳
+#define GSHHuanjingSensor_youhaiMeteId  @"01005704990001" // 有害气体
+
 // 可调开关
 #define GSHAdjustLightDeviceType @(257)
 #define GSHAdjustLight_offMeteId @"04010100060001"
